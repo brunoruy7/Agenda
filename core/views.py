@@ -29,7 +29,7 @@ def logout_user(request):
     logout(request)
     return redirect('/')
 
-def eventos(request, nome_evento):
+def even(request, nome_evento):
     event = Evento.objects.get(titulo=nome_evento)
     local = event.local
     return HttpResponse('Seu evento será em {}.'.format(local))
@@ -41,3 +41,22 @@ def listaeventos(request):
     response = {'eventos':evento}
     return render(request, 'Agenda.html', response)
 
+@login_required(login_url='/login/')
+def evento(request):
+    return render(request, 'evento.html')
+
+@login_required(login_url='/login/')
+def submit_evento(request):
+    if request.POST:
+        titulo = request.POST.get('titulo')
+        data_evento = request.POST.get('data_evento')
+        local = request.POST.get('local')
+        descricao = request.POST.get('descricao')
+        user = request.user
+
+        evento = Evento.objects.create(titulo=titulo,
+                                       data_evento=data_evento,
+                                       local=local,
+                                       descricao=descricao,
+                                       usuario=user)
+    return redirect("/")

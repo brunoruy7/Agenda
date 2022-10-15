@@ -9,9 +9,13 @@
     <ul>
         {% if eventos %}
             {% for evento in eventos %}
-                <li>{{evento.titulo}} - {{evento.get_data_evento}}
-                    (<a href="evento/?id= {{ evento.id }}"> Editar</a> / <a href="evento/delete/{{evento.id}}/"> Excluir</a> )
-                </li>
+                <div style= "{% if evento.get_atrasado %}
+                            color:red {% endif %}">
+                    <li>{{evento.titulo}} - {{evento.get_data_evento}}
+                        (<a href="evento/?id= {{ evento.id }}"> Editar</a>
+                        / <a href="evento/delete/{{evento.id}}/"> Excluir</a> )
+                    </li>
+                </div>
             {% endfor %}
         {% else %}
             <li>Você não tem nada em sua agenda</li>

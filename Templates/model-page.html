@@ -1,9 +1,13 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
-    {% include "model-header.html" %}
+    <link rel="stylesheet" href="{% static '/core/CSS/style.css' %}">
+    <meta charset="UTF-8">
+    <title>Agenda</title>
 </head>
 <body>
+    {% include "model-header.html" %}
     {% block content %} {% endblock %}
     {% include "model-footer.html" %}
 </body>

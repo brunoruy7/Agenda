@@ -1,0 +1,110 @@
+body {
+    background-color: lightblue;
+    background: url("/static/core/img/main_background_image.jpg") no-repeat;
+    background-size: cover;
+    color: darkgreen;
+}
+
+hr {
+    height: 5px;
+    background-color: darkgreen;
+}
+
+a:link {
+    color: darkgreen;
+}
+
+a:hover {
+    color: white;
+}
+
+a:visited {
+    color: darkgreen;
+}
+
+.container {
+    padding-left: 30%;
+    padding-right: 30%;
+    color: white;
+    align: center
+}
+
+.event {
+    padding-left: 40%;
+    padding-right: 40%;
+    padding-top: 2%;
+}
+
+.autentication {
+    padding-left: 35%;
+    padding-right: 35%;
+    padding-top: 7%;
+    text-align: center;
+}
+
+.bloco {
+    border: 3px solid darkgreen;
+    padding: 5%;
+    background-color: #0000ff60 !important;
+}
+
+.bloco form {
+    padding: 10%;
+}
+
+.bloco a:link {
+    color: white
+}
+
+.bloco a:visited {
+    color: white
+}
+
+.bloco a:hover {
+    color: darkgreen
+}
+
+.header {
+    display: block;
+    padding: 5px;
+}
+
+.header a {
+    float: right;
+    border: 2px solid;
+    }
+
+.header h1 {
+    display: inline;
+}
+
+.footer {
+    display: block;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    color: white;
+}
+
+.login {
+    padding: 3%;
+}
+
+.dark {
+    background-color: #0000ffb0;
+}
+
+.buttons {
+    border: none;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    padding: 5% 25%;
+    border-radius: 50%;
+}
+
+.main {
+    padding: 3% 10%;
+}

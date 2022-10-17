@@ -1,33 +1,36 @@
 {% extends "model-page.html" %}
 
 {% block content %}
+<div class="container event">
+    <div class="bloco">
+        <form action="submit" method="POST"> {% csrf_token %}
+            <h2>Evento</h2>
+            <input type="text" name="id_evento" value="{% if evento.id %}{{ evento.id }}{% endif %}" hidden>
+            <label>Título: </label>
+            <br>
+            <input type="text" name="titulo" size="18" value="{{ evento.titulo }}">
+            <br>
+            <label>Data do evento: </label>
+            <br>
+            <input type="datetime-local" name="data_evento" value = {{ evento.get_data_input_evento }}>
+            <br>
+            <label>Local: </label>
+            <br>
+            <input type="text", name="local" size="18" value="{{ evento.local }}">
+            <br>
+            <label>Descrição: </label>
+            <br>
 
-<h2>Evento</h2>
-<form action="submit" method="POST"> {% csrf_token %}
-    <input type="text" name="id_evento" value="{% if evento.id %}{{ evento.id }}{% endif %}" hidden>
-    <label>Título: </label>
-    <br>
-    <input type="text" name="titulo" size="18" value="{{ evento.titulo }}">
-    <br>
-    <label>Data do evento: </label>
-    <br>
-    <input type="datetime-local" name="data_evento" value = {{ evento.get_data_input_evento }}>
-    <br>
-    <label>Local: </label>
-    <br>
-    <input type="text", name="local" size="18" value="{{ evento.local }}">
-    <br>
-    <label>Descrição: </label>
-    <br>
 
+            <textarea rows="5" cols="19" name = 'descricao'>{% if evento.descricao %}{{evento.descricao }}{% endif %}</textarea>
+            <br><br>
 
-    <textarea rows="5" cols="19" name = 'descricao'>{% if evento.descricao %}{{evento.descricao }}{% endif %}</textarea>
-    <br><br>
-
-    <button type="submit">Salvar</button>
-    <a href="/">
-        <button type="button">Cancelar</button>
-    </a>
-</form>
+            <button class="buttons dark main" type="submit">Salvar</button>
+            <a href="/">
+                <button class="buttons dark main" type="button">Cancelar</button>
+            </a>
+        </form>
+    </div>
+</div>
 
 {% endblock %}
